@@ -1,44 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Financeiro Pessoal</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Controle Financeiro</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <h1>Controle Financeiro Pessoal</h1>
+    <div class="container">
+        <h1>Controle Financeiro Pessoal</h1>
+        <!-- Botão para ativar/desativar modo escuro -->
+        <button id="toggle-dark-mode">Ativar Modo Escuro</button>
 
-    <!-- Seção para adicionar informações -->
-    <div class="input-section">
-        <input type="text" id="salary" placeholder="Salário Mensal" oninput="this.value = this.value.replace(/[^0-9]/g, '')" onchange="saveSalary()">
-        <input type="text" id="description" placeholder="Descrição" oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '')">
-        <input type="number" id="amount" placeholder="Valor">
-        <button onclick="addTransaction()">Adicionar</button>
+        <!-- Seção de Entrada de Dados -->
+        <div class="input-section">
+            <input type="text" id="description" placeholder="Descrição">
+            <input type="number" id="amount" placeholder="Valor" step="0.01">
+            <button onclick="addTransaction()">Adicionar Transação</button>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard-container">
+            <div id="balance-info">
+                <h3>Saldo</h3>
+                <h4 id="balance-display">R$ 0.00</h4>
+            </div>
+
+            <div id="chart-container">
+                <canvas id="expenseChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Lista de Transações -->
+        <ul id="transaction-list"></ul>
     </div>
-</div>
 
+    <!-- Rodapé -->
+    <footer>
+        <p>Direitos De Oliveira Tecnologia, 2024</p>
+    </footer>
 
-<!-- Lista de transações -->
-<h2>Transações</h2>
-<ul id="transaction-list"></ul>
-</div>
-    <h2></h2>
-    <!-- Contêiner flexível para balance info e gráfico -->
-    <div id="dashboard-container">
-        <!-- Informações de saldo -->
-        <div id="balance-info">
-            <h3>Saldo Total: <span id="total-balance" class="balance">R$ 0,00</span></h3>
-            <h4>Uso do Salário: <span id="salary-usage">0%</span></h4>
-        </div>
-
-        <!-- Contêiner do gráfico -->
-        <div id="chart-container">
-            <canvas id="expenseChart"></canvas>
-        </div>
-<h6>Direitos reservados, PEDRO DE OLIVEIRA. 2024 ₢</h6>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
