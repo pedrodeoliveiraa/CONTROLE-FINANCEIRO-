@@ -12,7 +12,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     // Validando o login
     if (username === correctUsername && password === correctPassword) {
         // Login bem-sucedido, redireciona para a página do sistema
-        window.location.href = 'index.html';  // Substitua com o nome da sua página principal
+        window.location.href = 'inicio.html';  // Substitua com o nome da sua página principal
     } else {
         // Login falhou, exibe a mensagem de erro
         document.getElementById('error-message').innerText = 'Usuário ou senha inválidos!';
